@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap and jQuery Boilerplate with rem</title>
+    <title>Aria-labelledby Demo</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -165,50 +165,42 @@
             <p id="message" class="mt-3"></p>
         </div>
     </div>
-    <div class="container mt-5" style="margin-bottom: 6rem;">
-        <div class="row mt-5">
-            <div class="col-md-12">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vehicula ex eu lacus vestibulum, nec malesuada urna bibendum. Cras in tortor magna. Donec sit amet malesuada nulla. Suspendisse potenti. Curabitur tincidunt nisi at velit cursus, sed pellentesque felis vestibulum. Quisque imperdiet erat nec massa commodo, sit amet tincidunt sapien vulputate. Praesent non purus id lacus tincidunt mollis.</p>
+    
+    <div class="container mt-5">
         
-                <h2>About Us</h2>
-                <p>Nullam id dolor sit amet urna hendrerit dapibus in nec enim. Nulla facilisi. Nam auctor quam non diam consequat, a consectetur metus condimentum. Donec laoreet, leo sit amet congue consequat, augue felis dictum dolor, et varius urna est ac velit. Aenean in hendrerit leo, nec vulputate lacus. Phasellus lacinia turpis eget purus feugiat, id vehicula orci accumsan.</p>
-                
-                <img src="https://via.placeholder.com/800x400" alt="Placeholder Image">
-                
-                <h3>Our Services</h3>
-                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce vehicula mauris ut lectus venenatis, eget bibendum metus dictum. Phasellus posuere purus vel semper eleifend. Vivamus dictum ex ut orci ultricies, ut cursus turpis vehicula. Nulla facilisi. Integer venenatis libero id sapien facilisis, a dapibus dui hendrerit. Etiam auctor ex eu velit hendrerit tincidunt.</p>
-                
-                <ul>
-                    <li>Service 1: Description of service 1.</li>
-                    <li>Service 2: Description of service 2.</li>
-                    <li>Service 3: Description of service 3.</li>
-                </ul>
-                
-                <h2>Contact Us</h2>
-                <p>Sed sollicitudin, eros ac pretium placerat, orci urna facilisis purus, ut sodales lectus magna sed elit. Suspendisse potenti. Proin nec odio at nunc fermentum fermentum. Integer congue lorem a urna vestibulum dapibus. Aenean a orci volutpat, volutpat orci vel, commodo ex. Cras in tortor augue. Cras feugiat mi et tortor pharetra, in cursus lacus laoreet.</p>
-                
-                <img src="https://via.placeholder.com/800x400" alt="Placeholder Image">
-                
-                <p>Vivamus finibus sapien in justo faucibus, in venenatis libero pharetra. Nullam aliquam felis nec velit commodo, ac sollicitudin mi mollis. Aliquam fermentum urna ac sem varius, non viverra velit viverra. Mauris vel libero non dui dapibus pharetra. Integer ac ex ac nulla hendrerit tincidunt. Etiam dignissim, justo vel convallis posuere, erat ipsum tristique lacus, vel tincidunt risus ligula sed orci. Integer fermentum, magna nec bibendum malesuada, nunc lorem gravida quam, id dictum sem justo at est. Integer auctor libero sed tellus malesuada, nec commodo metus cursus.</p>
-                
-                <p>Curabitur vel lorem venenatis, cursus lectus in, convallis tortor. Sed aliquet orci non turpis tristique, nec pharetra est fermentum. Proin sollicitudin ultricies erat, non ullamcorper velit pharetra sit amet. Vestibulum at odio sed libero luctus tempus. Donec sagittis erat nec libero tincidunt fringilla. Phasellus non tortor lacus. Integer nec varius orci, ac tincidunt libero. Donec vel augue auctor, sollicitudin tortor in, consequat lectus. Phasellus luctus orci sed nisi dictum, non convallis purus dignissim.</p>
-                
-                <p>Mauris euismod felis eget eros pellentesque, vitae lacinia eros blandit. Duis interdum, sapien eget sodales bibendum, purus justo euismod purus, eget condimentum magna orci at nisl. Nullam faucibus magna et lorem sollicitudin, quis congue sem varius. Nullam vehicula, nulla nec fringilla venenatis, dui nunc tempor odio, at vestibulum dolor ipsum et ex. Aliquam erat volutpat. Nam aliquet libero a nisl bibendum, id finibus orci porttitor. Phasellus auctor quam nec felis scelerisque, vitae pretium purus ullamcorper.</p>
-                
-                <img src="https://via.placeholder.com/800x400" alt="Placeholder Image">
-                
-                <p>Sed commodo ex sit amet felis fringilla, id ultricies ligula fermentum. Donec in nisl eros. Vivamus nec ipsum vel arcu auctor varius. Donec bibendum dictum ante, in ultricies eros bibendum et. Morbi hendrerit nec lacus ut facilisis. Vivamus non odio et libero ultrices bibendum ac non dolor. Sed vitae sapien ut orci luctus pulvinar. Fusce ac urna urna.</p>
- 
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <div class="card">
+                    <a href="#" aria-labelledby="card-image card-1-description card-1-tile">
+                        <img id="card-image" src="/assets/images/riding-mower-1.png" style="width: 90%;" alt="Image Alt Text"/>
+                        <div class="card-content">
+                            <h3 id="card-1-tile">Card Title</h3>
+                            <p style="color: black;" id="card-1-description">This link uses aria-labelledby with multiple IDs</p>
+                        </div>
+                    </a>
+                </div>
             </div>
-            
-            <div class="col-md-6">
-                <h2>Our Services</h2>
-                <ul>
-                    <li>Service 1: Description of service 1.</li>
-                    <li>Service 2: Description of service 2.</li>
-                    <li>Service 3: Description of service 3.</li>
-                    <li>Service 4: Description of service 4.</li>
-                </ul>
+            <div class="col-md-4">
+                <div class="card">
+                    <a href="#" aria-label="Card 2 Riding Mower">
+                        <img src="/assets/images/riding-mower-1.png" style="width: 90%;"/>
+                        <div class="card-content">
+                            <h3 id="card-2-tile">Card Title 2</h3>
+                            <p style="color: black;" id="card-1-description">This link uses aria-label on the link only</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <a href="#" aria-labelledby="card-3-tile card-3-description">
+                        <img src="/assets/images/riding-mower-1.png" style="width: 90%;"/>
+                        <div class="card-content">
+                            <h3 id="card-3-tile">Card Title 3</h3>
+                            <p style="color: black;" id="card-3-description">Card text</p>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -225,9 +217,7 @@
             </div>
         </div>
     </div>
-    <div id="backToTop">
-        <button id="scrollToTopButton" class="btn btn-secondary">Scroll to Top</button>
-    </div>
+
     <footer class="bg-dark text-white text-center py-3">
         <p>&copy; 2024 Your Company. All rights reserved.</p>
     </footer>

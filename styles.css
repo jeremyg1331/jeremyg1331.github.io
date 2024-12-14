@@ -1,0 +1,108 @@
+/* Set the root font size */
+html {
+    font-size: 16px; /* 1rem = 16px */
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+}
+
+.container {
+    margin-top: 3rem; /* Equivalent to 48px */
+}
+
+#ns-hero-banner{
+    width: 100%;
+    height: 30rem;
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("photographer.jpg"); */
+    background-image: url("assets/images/hero-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+#ns-hero-text{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+#ns-hero-text h1{
+    font-size: 4.5rem;
+}
+
+#clickMeButton {
+    margin-top: 1rem; /* Equivalent to 16px */
+}
+
+#message {
+    color: green;
+    font-weight: bold;
+    margin-top: 1rem; /* Equivalent to 16px */
+}
+
+.linkList ul{
+    padding: 0;
+}
+.linkList li{
+    margin: 10px 0;
+    list-style: none;
+}
+.linkList  a{
+    display: flex;
+    align-items: center;
+    text-decoration: underline;
+    color: #878585;
+}
+.linkList a i{
+    background-color: #4f4f4f;
+    color: white;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 24px;
+    margin-right: 10px;
+}
+.linkList i:before {
+	display: inline-block;
+	text-decoration: none;
+}
+
+.icon {
+    background-color: #4f4f4f;
+    border-radius: 50%;
+    padding: 10px;
+    margin-right: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+}
+
+.icon svg {
+    fill: white;
+    width: 36px;
+    height: 36px;
+}
+
+
+#scrollToTopButton {
+    position: fixed;
+    bottom: 10rem; /* Adjust as necessary */
+    right: 2rem; /* Adjust as necessary */
+    display: none; /* Hidden by default */
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
