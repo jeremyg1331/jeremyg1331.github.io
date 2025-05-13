@@ -167,6 +167,42 @@
     </div>
     
     <div class="container mt-5">
+        <div class="row mt-5">
+            <p>We've encountered inconsistineces between JAWS and NVDA when an anchor element contains more than one piece of content. NVDA announces all content inside the anchor element as the link's accessible name. JAWS only announces the first element in the anchor as the accessible name.</p>
+            <div class="col-md-4">
+                <div class="card">
+                    <a href="#">
+                        <img id="card-image" src="/assets/images/riding-mower-1.png" style="width: 90%;" alt="Image Alt Text"/>
+                        <div class="card-content">
+                            <h3 id="issue-card-1-tile">Issue Card Title</h3>
+                            <p style="color: black;" id="issue-card-1-description">Here is the card content. The image uses an alt attribute.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <a href="#">
+                        <img src="/assets/images/riding-mower-1.png" alt="" style="width: 90%;"/>
+                        <div class="card-content">
+                            <h3 id="issue-card-2-tile">Issue Card Title 2</h3>
+                            <p style="color: black;" id="issue-card-2-description">This card uses a null alt text</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <a href="#">
+                        <!-- <img src="/assets/images/riding-mower-1.png" style="width: 90%;"/> -->
+                        <div class="card-content">
+                            <h3 id="issue-card-3-tile">Issue Card Title 3</h3>
+                            <p style="color: black;" id="issue-card-3-description">This card does not have an image. It just has a card heading, and card content</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
         
         <div class="row mt-5">
             <div class="col-md-4">
