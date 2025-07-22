@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+        p { line-height: 1.5; }
+
+        .visually-hidden:not(:focus):not(:active) {
+            clip-path: inset(50%);
+            height: 1px;
+            overflow: hidden;
+            position: absolute;
+            white-space: nowrap;
+            width: 1px;
+        }
+        .live-box {
+        border: 2px dashed #444;
+        padding: 1rem;
+        margin-top: 1rem;
+        min-height: 3rem;
+        background-color: #f9f9f9;
+        }
+
+        button {
+        margin-right: 1rem;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        }
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+});
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+<h1>4.1.2 Name, Role, Value Demo</h1>
+<h2>Accessible Names</h2>
+<h3>Example 1: Adjusting Names of a Link</h3>
+<h4>Example 1.1</h4>
+<p>This link uses the link text for the accessible name:</p>
+<a href="https://www.google.com">Search Google</a>
+<hr>
+<h4>Example 1.2</h4>
+<p>This link uses an aria-label for the accessible name:</p>
+<a aria-label="Open Google" href="https://www.google.com">Search Google</a>
+<hr>
+<h4>Example 1.3</h4>
+<p>This link uses the image's alt attribute for the accessible name:</p>
+<a href="https://www.google.com">
+    <img src="assets/images/Google_2015_logo.svg.png" alt="Search Google"/>
+</a>
+<hr>
+<h4>Example 1.4</h4>
+<p>This link wraps both the image and link text. Both are used for the accessible name:</p>
+<a href="https://www.google.com">
+    <img src="assets/images/Google_2015_logo.svg.png" alt="Search Google"/>
+    <p>Open Google</p>
+</a>
+<hr>
+<h4>Example 1.4</h4>
+<p>This link wraps both the image and link text. The img is considered decorative so we use null alt text and rely solely on the link text.</p> 
+<a href="https://www.google.com">
+    <img src="assets/images/Google_2015_logo.svg.png" alt=""/>
+    <p>Open Google</p>
+</a>
+<hr>
+
+<h3>Example 2: Aria-live regions</h3>
+<!-- <div id="" style="width: 25%; border: 2px solid black;"></div>
+<button type="button">Add Content to SR-only region</button> -->
+<p>This demo shows how screen readers react to live region updates.</p>
+
+  <button onclick="addMessage()">Add Message</button>
+  <button onclick="clearMessages()">Clear</button>
+
+  <div 
+    id="liveRegion" 
+    class="live-box" 
+    aria-live="polite" 
+    aria-atomic="false"
+    role="status">
+    <!-- Live updates will appear here -->
+  </div>
+
+<script>
+let messageCount = 1;
+const liveRegion = document.getElementById('liveRegion');
+
+function addMessage() {
+    const message = document.createElement('div');
+    if (liveRegion.innerHTML == `All messages have been cleared`){
+        liveRegion.innerHTML = '';
+        messageCount = 1;
+    }
+    message.textContent = `Message ${messageCount++} added at ${new Date().toLocaleTimeString()}`;
+    liveRegion.appendChild(message);
+}
+
+function clearMessages() {
+    liveRegion.innerHTML = '';
+    messageCount = 1;
+    liveRegion.append(`All messages have been cleared`);
+}
+</script>
+
+
+</main>
+
+</body>
+
+</html>

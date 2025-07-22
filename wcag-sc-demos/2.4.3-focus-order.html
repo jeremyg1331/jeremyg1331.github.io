@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+      p { line-height: 1.5; }
+
+      .visually-hidden:not(:focus):not(:active) {
+          clip-path: inset(50%);
+          height: 1px;
+          overflow: hidden;
+          position: absolute;
+          white-space: nowrap;
+          width: 1px;
+      }
+
+      a {
+          text-decoration: underline;
+          color: blue;
+      }
+      .fake-button {
+          display: inline-block;
+          padding: 0.5rem 1rem;
+          margin: 0.5rem;
+          background-color: #007acc;
+          color: white;
+          border: none;
+          border-radius: 4px;
+          text-decoration: none;
+          font-size: 1rem;
+          cursor: pointer;
+      }
+      .fake-button:focus {
+          outline-offset: 2px;
+      }
+      .modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .modal {
+      background: white;
+      padding: 2rem;
+      max-width: 400px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #000;
+    }
+
+    .modal h2 {
+      margin-top: 0;
+    }
+
+    .modal.show {
+      display: flex;
+    }
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+});
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+<h1>2.1.1 Keyboard Demo</h1>
+<h2>Example 1: Custom Components</h2>
+<p>All three look the same, but only the <strong>link</strong> and <strong>button</strong> are accessible via keyboard.</p>
+
+  <a href="#" class="fake-button" onclick="showAlert(event)">Link</a>
+  <button class="fake-button" onclick="showAlert(event)">Button</button>
+  <div class="fake-button" onclick="showAlert(event)">Div (mouse only)</div>
+
+  <script>
+    function showAlert(event) {
+      event.preventDefault();
+      alert(`Activated: ${event.target.textContent}`);
+    }
+    // (no keydown listener added, so it's mouse-only)
+  </script>
+<hr>
+<h2>Example 2: Negative tab index</h2>
+<p>The Link 2 has a negative tabindex, removing it from the focus order</p>
+<a href="#">Link 1</a><br>
+<a href="#" tabindex="-1">Link 2</a><br>
+<a href="#">Link 3</a><br>
+<hr>
+<h2>Example 3: Links Missing href</h2>
+<p>Link 2 is missing an href attribute, therefore the browser ignores it</p>
+<a href="#">Link 1</a><br>
+<a>Link 2</a><br>
+<a href="#">Link 3</a><br>
+<hr>
+<h2>Example 4: Aria-hidden</h2>
+<p>Aria-hidden on interactive components is not honored by the browser. Link 2 will still be exposed, even though it has the aria-hidden attribute.</p>
+<a href="#">Link 1</a><br>
+<a href="#" aria-hidden="true">Link 2</a><br>
+<a href="#">Link 3</a><br>
+<hr>
+<h2>Example 4: Modals</h2>
+<!-- <p>Click the button to open a modal. Notice that focus does not move into the modal.</p>
+
+  <button type="button" id="openModal" aria-haspopup="dialog">Open Modal</button>
+  <button>Another Button</button>
+  <a href="#">Example Link</a>
+
+  <div id="modalBackdrop" class="modal-backdrop">
+    <div class="modal" role="dialog" aria-modal="true">
+      <h2>Modal Title</h2>
+      <p>This modal is visually open, but focus does not move here.</p>
+      <button onclick="closeModal()">Close</button>
+    </div>
+  </div>
+<p>Typical Focus order for modals should look like:</p>
+<ul>
+  <li>User activates button that opens a modal</li>
+  <li>The user's focus should automatically shift to the modal element, typically the close button</li>
+  <li>Be contained within the modal window</li>
+  <li>When the modal is closed, the user's focus should return back to the element that activated it.</li>
+</ul>
+<script>
+    const openBtn = document.getElementById('openModal');
+    const modalBackdrop = document.getElementById('modalBackdrop');
+
+    openBtn.addEventListener('click', () => {
+      modalBackdrop.classList.add('show');
+    });
+
+    function closeModal() {
+      modalBackdrop.classList.remove('show');
+    }
+  </script> -->
+<hr>
+<h2>Example 5: Pagination Elements</h2>
+<!-- <p>XXX.</p>
+<a href="#">Link 1</a><br>
+<a href="#" aria-hidden="true">Link 2</a><br>
+<a href="#">Link 3</a><br> -->
+<hr>
+
+</main>
+
+</body>
+
+</html>
