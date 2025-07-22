@@ -48,28 +48,23 @@ window.addEventListener("load", function(event) {
 <h1>4.1.2 Name, Role, Value Demo</h1>
 <h2>Accessible Names</h2>
 <h3>Example 1: Adjusting Names of a Link</h3>
-<h4>Example 1.1</h4>
 <p>This link uses the link text for the accessible name:</p>
 <a href="https://www.google.com">Search Google</a>
 <hr>
-<h4>Example 1.2</h4>
 <p>This link uses an aria-label for the accessible name:</p>
 <a aria-label="Open Google" href="https://www.google.com">Search Google</a>
 <hr>
-<h4>Example 1.3</h4>
 <p>This link uses the image's alt attribute for the accessible name:</p>
 <a href="https://www.google.com">
     <img src="assets/images/Google_2015_logo.svg.png" alt="Search Google"/>
 </a>
 <hr>
-<h4>Example 1.4</h4>
 <p>This link wraps both the image and link text. Both are used for the accessible name:</p>
 <a href="https://www.google.com">
     <img src="assets/images/Google_2015_logo.svg.png" alt="Search Google"/>
     <p>Open Google</p>
 </a>
 <hr>
-<h4>Example 1.4</h4>
 <p>This link wraps both the image and link text. The img is considered decorative so we use null alt text and rely solely on the link text.</p> 
 <a href="https://www.google.com">
     <img src="assets/images/Google_2015_logo.svg.png" alt=""/>
