@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>x</title>
+
+    <style>
+        p {
+            line-height: 1.5;
+        }
+
+        /* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+        .visually-hidden:not(:focus):not(:active) {
+            clip-path: inset(50%);
+            height: 1px;
+            overflow: hidden;
+            position: absolute;
+            white-space: nowrap;
+            width: 1px;
+        }
+        #download-cards{
+            background: #dcd9d9;
+            padding:2%;
+            width: 100%;
+        }
+        .doc-download__container {
+            width: 100%;
+            padding: 16px 0px;
+            display: flex;
+            flex-flow: wrap;
+            grid-template-columns: auto auto;
+            gap: 12px;
+        }
+        .doc-download__container ul {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            list-style: none;
+            padding: 0px;
+        }
+        .doc-download__container ul li {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            align-items: start;
+            gap: 8px;
+            width: auto;
+            height: 100%;
+            padding: 0px;
+            position: relative;
+            background: var(--Mountain-Shadow-Grey-white, #FFF);
+            box-shadow: rgba(0, 0, 0, 0.55) 0px 0px 1px 0px;
+            border-radius: 6px 8px 8px 6px !important;
+        }
+        .doc-download__container ul li a {
+            text-decoration: none;
+        }
+
+        /* Focus Styling */
+        .doc-download__container li:has(a:focus-visible) {
+            border-radius: 8px;
+            outline: 2px solid #fea116 !important;
+            box-shadow: 0px 0px 0px 4px #fea116 !important;
+        }
+        
+        .doc-download__container li a:focus-visible {
+            outline: none !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+    </style>
+
+    <script>
+        window.addEventListener("load", function (event) {});
+    </script>
+
+</head>
+
+
+
+
+<body>
+    <main>
+        <p>Below is a list of links. In this case, the focus indicator is placed on the li element instead of the anchor
+            element. This was marked as a potential issue on a customer's page. We suspect that the platform couldn't tell if
+            the link had a visible focus indicator</p>
+        <!-- <ul>
+            <li>
+                <a href="#">Link 1</a>
+            </li>
+            <li>
+                <a href="#">Link 2</a>
+            </li>
+            <li>
+                <a href="#">Link 3</a>
+            </li>
+            <li>
+                <a href="#">Link 4</a>
+            </li>
+
+        </ul> -->
+        <div id="download-cards">
+            <div class="doc-download__container">
+                <ul>
+                    <li style="border-left: 4px solid var(--Red, #E61B23);"><a alt="2011 County Self Assessment Report"
+                            target="_blank"
+                            href="https://staging.sandiegocounty.gov/uploads/2025/05/San_Diego_2011_CSA_Report-1.pdf">
+                            <div class="doc-download__document">
+                                <div class="doc-type-icon"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i></div>
+                                <div class="doc-info">
+                                    <h3>2011 County Self Assessment Report</h3>
+                                    <p></p>
+                                    <p>7.26 MB</p>
+                                </div>
+                                <div class="download-icon"><i class="fa-solid fa-download" aria-hidden="true"></i></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li style="border-left: 4px solid var(--Mountain-Shadow-Grey-msgrey-600, #3F3F42);"><a
+                            alt="2016 County Self Assessment Report" target="_blank"
+                            href="https://staging.sandiegocounty.gov/uploads/2025/05/CSA_Report_112316_Approved-1.docx">
+                            <div class="doc-download__document">
+                                <div class="doc-type-icon"><i class="fa-solid fa-link" aria-hidden="true"></i></div>
+                                <div class="doc-info">
+                                    <h3>2016 County Self Assessment Report</h3>
+                                    <p></p>
+                                    <p>4.09 MB</p>
+                                </div>
+                                <div class="download-icon"><i class="fa-solid fa-download" aria-hidden="true"></i></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li style="border-left: 4px solid var(--Red, #E61B23);"><a alt="2022 County Self Assessment Report"
+                            target="_blank" href="https://staging.sandiegocounty.gov/uploads/2025/05/2022_CSA_Report-1.pdf">
+                            <div class="doc-download__document">
+                                <div class="doc-type-icon"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i></div>
+                                <div class="doc-info">
+                                    <h3>2022 County Self Assessment Report</h3>
+                                    <p></p>
+                                    <p>10.48 MB</p>
+                                </div>
+                                <div class="download-icon"><i class="fa-solid fa-download" aria-hidden="true"></i></div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+    </main>
+
+</body>
+
+</html>
