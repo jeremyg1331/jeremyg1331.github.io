@@ -70,6 +70,61 @@
             border: none !important;
             box-shadow: none !important;
         }
+
+        /* JG Alterations */
+        #download-cards-JG{
+            background: #fff;
+            padding:2%;
+            width: 100%;
+        }
+        .doc-download__container-JG {
+            width: 100%;
+            padding: 16px 0px;
+            display: flex;
+            flex-flow: wrap;
+            grid-template-columns: auto auto;
+            gap: 12px;
+        }
+        .doc-download__container-JG ul {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            list-style: none;
+            padding: 0px;
+        }
+        .doc-download__container-JG ul li {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            align-items: start;
+            gap: 8px;
+            width: auto;
+            height: 100%;
+            padding: 0px;
+            position: relative;
+            background: var(--Mountain-Shadow-Grey-white, #FFF);
+            box-shadow: rgba(0, 0, 0, 0.55) 0px 0px 1px 0px;
+            border-radius: 6px 8px 8px 6px !important;
+        }
+        .doc-download__container-JG ul li a {
+            text-decoration: none;
+        }
+        /* JG Alterations - Focus Styling */
+        /* .doc-download__container li:has(a:focus-visible) {
+            border-radius: 8px;
+            outline: 2px solid #fea116 !important;
+            box-shadow: 0px 0px 0px 4px #fea116 !important;
+        } */
+        
+        .doc-download__container-JG li a:focus-visible {
+            /* outline: none !important;
+            border: none !important;
+            box-shadow: none !important; */
+            border-radius: 8px;
+            outline: 4px solid #fea116 !important;
+            /* box-shadow: 0px 0px 0px 4px #fea116 !important; */
+            outline-offset: 4px;
+        }        
     </style>
 
     <script>
@@ -102,6 +157,7 @@
 
         </ul> -->
         <div id="download-cards">
+            <h2>SD's Cards</h2>
             <div class="doc-download__container">
                 <ul>
                     <li style="border-left: 4px solid var(--Red, #E61B23);"><a alt="2011 County Self Assessment Report"
@@ -148,6 +204,57 @@
                 </ul>
             </div>
         </div>
+        
+        <!-- JG Download Cards -->
+        <div id="download-cards-JG">
+            <h2>Jeremy's Cards</h2>
+            <div class="doc-download__container-JG">
+                <ul>
+                    <li style="border-left: 4px solid var(--Red, #E61B23);"><a alt="2011 County Self Assessment Report"
+                            target="_blank"
+                            href="https://staging.sandiegocounty.gov/uploads/2025/05/San_Diego_2011_CSA_Report-1.pdf">
+                            <div class="doc-download__document-JG">
+                                <div class="doc-type-icon"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i></div>
+                                <div class="doc-info">
+                                    <h3>2011 County Self Assessment Report</h3>
+                                    <p></p>
+                                    <p>7.26 MB</p>
+                                </div>
+                                <div class="download-icon"><i class="fa-solid fa-download" aria-hidden="true"></i></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li style="border-left: 4px solid var(--Mountain-Shadow-Grey-msgrey-600, #3F3F42);"><a
+                            alt="2016 County Self Assessment Report" target="_blank"
+                            href="https://staging.sandiegocounty.gov/uploads/2025/05/CSA_Report_112316_Approved-1.docx">
+                            <div class="doc-download__document-JG">
+                                <div class="doc-type-icon"><i class="fa-solid fa-link" aria-hidden="true"></i></div>
+                                <div class="doc-info">
+                                    <h3>2016 County Self Assessment Report</h3>
+                                    <p></p>
+                                    <p>4.09 MB</p>
+                                </div>
+                                <div class="download-icon"><i class="fa-solid fa-download" aria-hidden="true"></i></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li style="border-left: 4px solid var(--Red, #E61B23);"><a alt="2022 County Self Assessment Report"
+                            target="_blank" href="https://staging.sandiegocounty.gov/uploads/2025/05/2022_CSA_Report-1.pdf">
+                            <div class="doc-download__document-JG">
+                                <div class="doc-type-icon"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i></div>
+                                <div class="doc-info">
+                                    <h3>2022 County Self Assessment Report</h3>
+                                    <p></p>
+                                    <p>10.48 MB</p>
+                                </div>
+                                <div class="download-icon"><i class="fa-solid fa-download" aria-hidden="true"></i></div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
 
 
 
