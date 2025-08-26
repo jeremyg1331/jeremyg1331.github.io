@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
+    <title>x</title>
+
+    <style>
+        p {
+            line-height: 1.5;
+        }
+
+        /* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+        .visually-hidden:not(:focus):not(:active) {
+            clip-path: inset(50%);
+            height: 1px;
+            overflow: hidden;
+            position: absolute;
+            white-space: nowrap;
+            width: 1px;
+        }
+    </style>
+
+</head>
+
+
+
+
+<body>
+    <main>
+<table id="example" class="display nowrap" style="width:100%">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Position</th>
+      <th>Office</th>
+      <th>Age</th>
+      <th>Start date</th>
+      <th>Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tiger Nixon</td>
+      <td>System Architect</td>
+      <td>Edinburgh</td>
+      <td>61</td>
+      <td>2011/04/25</td>
+      <td>$320,800</td>
+    </tr>
+    <!-- More rows -->
+  </tbody>
+</table>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  $('#example').DataTable({
+    responsive: {
+      details: {
+        type: 'inline',   // shows hidden columns inline when expanded
+        target: 'td:first-child', // makes first cell the toggle
+        display: $.fn.dataTable.Responsive.display.childRowImmediate,
+        renderer: $.fn.dataTable.Responsive.renderer.tableAll({
+          tableClass: 'child-table',
+          header: true
+        })
+      }
+    }
+  });
+
+  // Accessibility enhancements
+  $('#example').on('responsive-display.dt', function(e, datatable, row, showHide) {
+    // Add aria-expanded for screen readers
+    let tr = $(row.node());
+    tr.attr('aria-expanded', showHide);
+  });
+
+  // Add roles and labels for keyboard navigation
+  $('#example').attr({
+    role: 'table',
+    'aria-describedby': 'example_info'
+  });
+});
+</script>
+
+    </main>
+
+</body>
+
+</html>

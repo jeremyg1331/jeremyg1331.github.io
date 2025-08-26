@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/2.3.2/css/dataTables.dataTables.css" />
     <script src="https://cdn.datatables.net/2.3.2/js/dataTables.js"></script>
-	<title>x</title>
+    <title>x</title>
 
-	<style>
+    <style>
+        p {
+            line-height: 1.5;
+        }
 
-p { line-height: 1.5; }
+        /* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+        .visually-hidden:not(:focus):not(:active) {
+            clip-path: inset(50%);
+            height: 1px;
+            overflow: hidden;
+            position: absolute;
+            white-space: nowrap;
+            width: 1px;
+        }
+    </style>
 
-/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
-.visually-hidden:not(:focus):not(:active) {
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-}
-
-	</style>
-
-	<script>
-
-    window.addEventListener("load", function(event) {
-    });
-    $(document).ready( function () {
-        $('#myTable').DataTable();
-    } );
-	</script>
+    <script>
+        window.addEventListener("load", function (event) {});
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+            $('#example').DataTable();
+        });
+    </script>
 
 </head>
 
@@ -39,52 +39,55 @@ p { line-height: 1.5; }
 
 
 <body>
-<main>
+    <main>
 
 
-<table id="myTable" class="display">
-    <thead>
-        <tr>
-            <th>Column 1</th>
-            <th>Column 2</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Row 1 Data 1</td>
-            <td>Row 1 Data 2</td>
-        </tr>
-        <tr>
-            <td>Row 2 Data 1</td>
-            <td>Row 2 Data 2</td>
-        </tr>
-        <tr>
-            <td>Row 3 Data 1</td>
-            <td>Row 3 Data 2</td>
-        </tr>
-        <tr>
-            <td>Row 4 Data 1</td>
-            <td>Row 4 Data 2</td>
-        </tr>
-        <tr>
-            <td>Row 5 Data 1</td>
-            <td>Row 5 Data 2</td>
-        </tr>
-        <tr>
-            <td>Row 6 Data 1</td>
-            <td>Row 6 Data 2</td>
-        </tr>
-        <tr>
-            <td>Row 7 Data 1</td>
-            <td>Row 7 Data 2</td>
-        </tr>
-    </tbody>
-</table>
+        <table id="myTable" class="display">
+            <thead>
+                <tr>
+                    <th>Column 1</th>
+                    <th>Column 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Row 1 Data 1</td>
+                    <td>Row 1 Data 2</td>
+                </tr>
+                <tr>
+                    <td>Row 2 Data 1</td>
+                    <td>Row 2 Data 2</td>
+                </tr>
+                <tr>
+                    <td>Row 3 Data 1</td>
+                    <td>Row 3 Data 2</td>
+                </tr>
+                <tr>
+                    <td>Row 4 Data 1</td>
+                    <td>Row 4 Data 2</td>
+                </tr>
+                <tr>
+                    <td>Row 5 Data 1</td>
+                    <td>Row 5 Data 2</td>
+                </tr>
+                <tr>
+                    <td>Row 6 Data 1</td>
+                    <td>Row 6 Data 2</td>
+                </tr>
+                <tr>
+                    <td>Row 7 Data 1</td>
+                    <td>Row 7 Data 2</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="hero-callout">
+    <div id="example_wrapper" class="dt-container"><div class="dt-layout-row"><div class="dt-layout-cell dt-layout-start"><div class="dt-length"><select aria-controls="example" class="dt-input" id="dt-length-0"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select><label for="dt-length-0"> entries per page</label></div></div><div class="dt-layout-cell dt-layout-end"><div class="dt-search"><label for="dt-search-0">Search:</label><input type="search" class="dt-input" id="dt-search-0" placeholder="" aria-controls="example"></div></div></div><div class="dt-layout-row dt-layout-table"><div class="dt-layout-cell  dt-layout-full"><table id="example" class="display nowrap dataTable dtr-inline collapsed" aria-describedby="example_info" style="width: 100%;"><colgroup><col data-dt-column="0" style="width: 139.562px;"><col data-dt-column="1" style="width: 205.906px;"><col data-dt-column="2" style="width: 111.031px;"><col data-dt-column="3" style="width: 96.8229px;"><col data-dt-column="4" style="width: 137.625px;"></colgroup><thead><tr><th data-dt-column="0" rowspan="1" colspan="1" class="dt-orderable-asc dt-orderable-desc dt-ordering-asc" aria-sort="ascending"><div class="dt-column-header"><span class="dt-column-title">Name</span><span class="dtcc"><button class="dtcc-button dtcc-button_order dtcc-button_active" type="button" aria-label="Toggle ordering"><span class="dtcc-button-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 8 4-4 4 4"></path><path d="M7 4v16"></path><path d="M11 12h4"></path><path d="M11 16h7"></path><path d="M11 20h10"></path></svg></span><span class="dtcc-button-text">Toggle ordering</span><span class="dtcc-button-state"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span><span class="dtcc-button-extra"></span></button><button class="dtcc-button dtcc-button_dropdown" type="button" aria-label="More..." aria-haspopup="dialog"><span class="dtcc-button-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></span><span class="dtcc-button-text">More...</span><span class="dtcc-button-state"></span><span class="dtcc-button-extra"></span></button></span></div></th><th data-dt-column="1" rowspan="1" colspan="1" class="dt-orderable-asc dt-orderable-desc"><div class="dt-column-header"><span class="dt-column-title">Position</span><span class="dtcc"><button class="dtcc-button dtcc-button_order" type="button" aria-label="Toggle ordering"><span class="dtcc-button-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 8 4-4 4 4"></path><path d="m11 16-4 4-4-4"></path><path d="M7 4v16"></path><path d="M15 8h6"></path><path d="M15 16h6"></path><path d="M13 12h8"></path></svg></span><span class="dtcc-button-text">Toggle ordering</span><span class="dtcc-button-state"></span><span class="dtcc-button-extra"></span></button><button class="dtcc-button dtcc-button_dropdown" type="button" aria-label="More..." aria-haspopup="dialog"><span class="dtcc-button-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></span><span class="dtcc-button-text">More...</span><span class="dtcc-button-state"></span><span class="dtcc-button-extra"></span></button></span></div></th><th data-dt-column="2" rowspan="1" colspan="1" class="dt-orderable-asc dt-orderable-desc"><div class="dt-column-header"><span class="dt-column-title">Office</span><span class="dtcc"><button class="dtcc-button dtcc-button_order" type="button" aria-label="Toggle ordering"><span class="dtcc-button-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 8 4-4 4 4"></path><path d="m11 16-4 4-4-4"></path><path d="M7 4v16"></path><path d="M15 8h6"></path><path d="M15 16h6"></path><path d="M13 12h8"></path></svg></span><span class="dtcc-button-text">Toggle ordering</span><span class="dtcc-button-state"></span><span class="dtcc-button-extra"></span></button><button class="dtcc-button dtcc-button_dropdown" type="button" aria-label="More..." aria-haspopup="dialog"><span class="dtcc-button-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></span><span class="dtcc-button-text">More...</span><span class="dtcc-button-state"></span><span class="dtcc-button-extra"></span></button></span></div></th><th data-dt-column="3" rowspan="1" colspan="1" class="dt-type-numeric dt-orderable-asc dt-orderable-desc"><div class="dt-column-header"><span class="dt-column-title">Age</span><span class="dtcc"><button class="dtcc-button dtcc-button_order" type="button" aria-label="Toggle ordering"><span class="dtcc-button-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 8 4-4 4 4"></path><path d="m11 16-4 4-4-4"></path><path d="M7 4v16"></path><path d="M15 8h6"></path><path d="M15 16h6"></path><path d="M13 12h8"></path></svg></span><span class="dtcc-button-text">Toggle ordering</span><span class="dtcc-button-state"></span><span class="dtcc-button-extra"></span></button><button class="dtcc-button dtcc-button_dropdown" type="button" aria-label="More..." aria-haspopup="dialog"><span class="dtcc-button-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></span><span class="dtcc-button-text">More...</span><span class="dtcc-button-state"></span><span class="dtcc-button-extra"></span></button></span></div></th><th data-dt-column="4" rowspan="1" colspan="1" class="dt-right dt-orderable-asc dt-orderable-desc"><div class="dt-column-header"><span class="dt-column-title">Start date</span><span class="dtcc"><button class="dtcc-button dtcc-button_order" type="button" aria-label="Toggle ordering"><span class="dtcc-button-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 8 4-4 4 4"></path><path d="m11 16-4 4-4-4"></path><path d="M7 4v16"></path><path d="M15 8h6"></path><path d="M15 16h6"></path><path d="M13 12h8"></path></svg></span><span class="dtcc-button-text">Toggle ordering</span><span class="dtcc-button-state"></span><span class="dtcc-button-extra"></span></button><button class="dtcc-button dtcc-button_dropdown" type="button" aria-label="More..." aria-haspopup="dialog"><span class="dtcc-button-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></span><span class="dtcc-button-text">More...</span><span class="dtcc-button-state"></span><span class="dtcc-button-extra"></span></button></span></div></th><th data-dt-column="5" rowspan="1" colspan="1" class="dt-type-numeric dt-orderable-asc dt-orderable-desc dtr-hidden" style="display: none;"><div class="dt-column-header"><span class="dt-column-title">Salary</span><span class="dtcc"><button class="dtcc-button dtcc-button_order" type="button" aria-label="Toggle ordering"><span class="dtcc-button-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 8 4-4 4 4"></path><path d="m11 16-4 4-4-4"></path><path d="M7 4v16"></path><path d="M15 8h6"></path><path d="M15 16h6"></path><path d="M13 12h8"></path></svg></span><span class="dtcc-button-text">Toggle ordering</span><span class="dtcc-button-state"></span><span class="dtcc-button-extra"></span></button><button class="dtcc-button dtcc-button_dropdown" type="button" aria-label="More..." aria-haspopup="dialog"><span class="dtcc-button-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></span><span class="dtcc-button-text">More...</span><span class="dtcc-button-state"></span><span class="dtcc-button-extra"></span></button></span></div></th></tr></thead><tbody><tr><td class="sorting_1 dtr-control" tabindex="0" style="">Airi Satou</td><td>Accountant</td><td>Tokyo</td><td class="dt-type-numeric">33</td><td class="dt-right">11/27/2008</td><td class="dt-type-numeric dtr-hidden" style="display: none;">$162,700</td></tr><tr><td class="sorting_1 dtr-control" tabindex="0">Angelica Ramos</td><td>Chief Executive Officer (CEO)</td><td>London</td><td class="dt-type-numeric">47</td><td class="dt-right">10/8/2009</td><td class="dt-type-numeric dtr-hidden" style="display: none;">$1,200,000</td></tr><tr><td class="sorting_1 dtr-control" tabindex="0">Ashton Cox</td><td>Junior Technical Author</td><td>San Francisco</td><td class="dt-type-numeric">66</td><td class="dt-right">1/11/2009</td><td class="dt-type-numeric dtr-hidden" style="display: none;">$86,000</td></tr><tr><td class="sorting_1 dtr-control" tabindex="0">Bradley Greer</td><td>Software Engineer</td><td>London</td><td class="dt-type-numeric">41</td><td class="dt-right">10/12/2012</td><td class="dt-type-numeric dtr-hidden" style="display: none;">$132,000</td></tr><tr><td class="sorting_1 dtr-control" tabindex="0">Brenden Wagner</td><td>Software Engineer</td><td>San Francisco</td><td class="dt-type-numeric">28</td><td class="dt-right">6/6/2011</td><td class="dt-type-numeric dtr-hidden" style="display: none;">$206,850</td></tr><tr><td class="sorting_1 dtr-control" tabindex="0">Brielle Williamson</td><td>Integration Specialist</td><td>New York</td><td class="dt-type-numeric">61</td><td class="dt-right">12/1/2012</td><td class="dt-type-numeric dtr-hidden" style="display: none;">$372,000</td></tr><tr><td class="sorting_1 dtr-control" tabindex="0">Bruno Nash</td><td>Software Engineer</td><td>London</td><td class="dt-type-numeric">38</td><td class="dt-right">5/2/2011</td><td class="dt-type-numeric dtr-hidden" style="display: none;">$163,500</td></tr><tr><td class="sorting_1 dtr-control" tabindex="0">Caesar Vance</td><td>Pre-Sales Support</td><td>New York</td><td class="dt-type-numeric">21</td><td class="dt-right">12/11/2011</td><td class="dt-type-numeric dtr-hidden" style="display: none;">$106,450</td></tr><tr><td class="sorting_1 dtr-control" tabindex="0">Cara Stevens</td><td>Sales Assistant</td><td>New York</td><td class="dt-type-numeric">46</td><td class="dt-right">12/5/2011</td><td class="dt-type-numeric dtr-hidden" style="display: none;">$145,600</td></tr><tr><td class="sorting_1 dtr-control" tabindex="0">Cedric Kelly</td><td>Senior JavaScript Developer</td><td>Edinburgh</td><td class="dt-type-numeric">22</td><td class="dt-right">3/28/2012</td><td class="dt-type-numeric dtr-hidden" style="display: none;">$433,060</td></tr></tbody><tfoot><tr><th data-dt-column="0" rowspan="1" colspan="1"><div class="dt-column-footer"><span class="dt-column-title">Name</span></div></th><th data-dt-column="1" rowspan="1" colspan="1"><div class="dt-column-footer"><span class="dt-column-title">Position</span></div></th><th data-dt-column="2" rowspan="1" colspan="1"><div class="dt-column-footer"><span class="dt-column-title">Office</span></div></th><th data-dt-column="3" rowspan="1" colspan="1" class="dt-type-numeric"><div class="dt-column-footer"><span class="dt-column-title">Age</span></div></th><th data-dt-column="4" rowspan="1" colspan="1" class="dt-right"><div class="dt-column-footer"><span class="dt-column-title">Start date</span></div></th><th data-dt-column="5" rowspan="1" colspan="1" class="dt-type-numeric dtr-hidden" style="display: none;"><div class="dt-column-footer"><span class="dt-column-title">Salary</span></div></th></tr></tfoot></table></div></div><div class="dt-layout-row"><div class="dt-layout-cell dt-layout-start"><div class="dt-info" aria-live="polite" id="example_info" role="status">Showing 1 to 10 of 57 entries</div></div><div class="dt-layout-cell dt-layout-end"><div class="dt-paging"><nav aria-label="pagination"><button class="dt-paging-button disabled first" role="link" type="button" aria-controls="example" aria-disabled="true" aria-label="First" data-dt-idx="first" tabindex="-1">«</button><button class="dt-paging-button disabled previous" role="link" type="button" aria-controls="example" aria-disabled="true" aria-label="Previous" data-dt-idx="previous" tabindex="-1">‹</button><button class="dt-paging-button current" role="link" type="button" aria-controls="example" aria-current="page" data-dt-idx="0">1</button><button class="dt-paging-button" role="link" type="button" aria-controls="example" data-dt-idx="1">2</button><button class="dt-paging-button" role="link" type="button" aria-controls="example" data-dt-idx="2">3</button><button class="dt-paging-button" role="link" type="button" aria-controls="example" data-dt-idx="3">4</button><button class="dt-paging-button" role="link" type="button" aria-controls="example" data-dt-idx="4">5</button><button class="dt-paging-button" role="link" type="button" aria-controls="example" data-dt-idx="5">6</button><button class="dt-paging-button next" role="link" type="button" aria-controls="example" aria-label="Next" data-dt-idx="next">›</button><button class="dt-paging-button last" role="link" type="button" aria-controls="example" aria-label="Last" data-dt-idx="last">»</button></nav></div></div></div><div class="dt-autosize" style="width: 100%; height: 0px;"></div></div>
+</div>
 
 
 
-
-</main>
+    </main>
 
 </body>
 
