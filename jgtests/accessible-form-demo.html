@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Volunteer Application Form</title>
+
+<style>
+  :root {
+    --primary:#0b5fff;
+    --border:#ccc;
+    --error:#b00020;
+    --bg:#f7f7f7;
+  }
+
+  body{
+    font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    margin:0;
+    background:var(--bg);
+    line-height:1.5;
+  }
+
+  main{
+    max-width:720px;
+    margin:auto;
+    padding:1.5rem;
+  }
+
+  h1{
+    margin-top:0;
+  }
+
+  form{
+    background:white;
+    padding:1.5rem;
+    border-radius:8px;
+    box-shadow:0 2px 6px rgba(0,0,0,.08);
+  }
+
+  .field{
+    margin-bottom:1.25rem;
+  }
+
+  label{
+    font-weight:600;
+    display:block;
+    margin-bottom:.25rem;
+  }
+
+  input,
+  select,
+  textarea{
+    width:100%;
+    padding:.6rem;
+    border:1px solid var(--border);
+    border-radius:4px;
+    font-size:1rem;
+  }
+
+  textarea{
+    min-height:100px;
+  }
+
+  fieldset{
+    border:1px solid var(--border);
+    padding:1rem;
+    margin-bottom:1.25rem;
+  }
+
+  legend{
+    font-weight:700;
+  }
+
+  .checkbox-group,
+  .radio-group{
+    display:grid;
+    gap:.35rem;
+    margin-top:.5rem;
+  }
+
+  .checkbox-group label,
+  .radio-group label{
+    font-weight:400;
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+  }
+
+  .help{
+    font-size:.9rem;
+    color:#555;
+  }
+
+  .required{
+    color:var(--error);
+  }
+
+  button{
+    background:var(--primary);
+    color:white;
+    border:none;
+    padding:.75rem 1.25rem;
+    font-size:1rem;
+    border-radius:6px;
+    cursor:pointer;
+  }
+
+  button:focus-visible{
+    outline:3px solid black;
+    outline-offset:2px;
+  }
+
+  .error{
+    color:var(--error);
+    font-size:.9rem;
+  }
+
+  .error-summary{
+    border:2px solid var(--error);
+    padding:1rem;
+    margin-bottom:1.5rem;
+    background:#fff5f6;
+  }
+
+  .error-summary h2{
+    margin-top:0;
+    font-size:1.1rem;
+  }
+
+  @media (min-width:600px){
+
+    .two-col{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:1rem;
+    }
+
+  }
+</style>
+</head>
+
+<body>
+
+<main>
+
+<h1>Volunteer Application</h1>
+
+<p>Complete this form to apply for volunteer opportunities. Required fields are marked with <span class="required">*</span>.</p>
+
+<div id="error-summary" class="error-summary" hidden tabindex="-1">
+  <h2>There is a problem</h2>
+  <ul id="error-list"></ul>
+</div>
+
+<form id="volunteer-form" novalidate>
+
+<div class="two-col">
+
+<div class="field">
+<label for="first-name">First name <span class="required">*</span></label>
+<input id="first-name" name="first-name" required>
+<div class="error" id="error-first-name"></div>
+</div>
+
+<div class="field">
+<label for="last-name">Last name <span class="required">*</span></label>
+<input id="last-name" name="last-name" required>
+<div class="error" id="error-last-name"></div>
+</div>
+
+</div>
+
+<div class="two-col">
+
+<div class="field">
+<label for="email">Email address <span class="required">*</span></label>
+<input id="email" name="email" type="email" required aria-describedby="email-help">
+<div id="email-help" class="help">We will use this to contact you about volunteer opportunities.</div>
+<div class="error" id="error-email"></div>
+</div>
+
+<div class="field">
+<label for="phone">Phone number</label>
+<input id="phone" name="phone" type="tel">
+</div>
+
+</div>
+
+<fieldset>
+<legend>Volunteer interests <span class="required">*</span></legend>
+
+<div class="checkbox-group">
+
+<label>
+<input type="checkbox" name="interests" value="events">
+Event Support
+</label>
+
+<label>
+<input type="checkbox" name="interests" value="fundraising">
+Fundraising
+</label>
+
+<label>
+<input type="checkbox" name="interests" value="community">
+Community Outreach
+</label>
+
+<label>
+<input type="checkbox" name="interests" value="admin">
+Administrative Help
+</label>
+
+</div>
+
+<div class="error" id="error-interests"></div>
+
+</fieldset>
+
+<fieldset>
+<legend>Experience level</legend>
+
+<div class="radio-group">
+
+<label>
+<input type="radio" name="experience" value="beginner">
+Beginner
+</label>
+
+<label>
+<input type="radio" name="experience" value="intermediate">
+Intermediate
+</label>
+
+<label>
+<input type="radio" name="experience" value="experienced">
+Experienced Volunteer
+</label>
+
+</div>
+
+</fieldset>
+
+<div class="field">
+<label for="availability">Availability start date <span class="required">*</span></label>
+<input type="date" id="availability" name="availability" required>
+<div class="error" id="error-availability"></div>
+</div>
+
+<fieldset>
+
+<legend>Days available</legend>
+
+<div class="checkbox-group">
+
+<label><input type="checkbox" name="days" value="monday"> Monday</label>
+<label><input type="checkbox" name="days" value="tuesday"> Tuesday</label>
+<label><input type="checkbox" name="days" value="wednesday"> Wednesday</label>
+<label><input type="checkbox" name="days" value="thursday"> Thursday</label>
+<label><input type="checkbox" name="days" value="friday"> Friday</label>
+<label><input type="checkbox" name="days" value="weekend"> Weekend</label>
+
+</div>
+
+</fieldset>
+
+<div class="field">
+<label for="shift">Preferred shift time</label>
+
+<select id="shift" name="shift">
+<option value="">Select one</option>
+<option>Morning</option>
+<option>Afternoon</option>
+<option>Evening</option>
+</select>
+
+</div>
+
+<div class="field">
+
+<label for="comments">Additional comments</label>
+
+<textarea id="comments" name="comments" aria-describedby="comments-help"></textarea>
+
+<div id="comments-help" class="help">
+Tell us about any relevant experience, accessibility needs, or preferences.
+</div>
+
+</div>
+
+<button type="submit">Submit Application</button>
+
+</form>
+
+</main>
+
+<script>
+
+const form = document.getElementById("volunteer-form")
+const summary = document.getElementById("error-summary")
+const errorList = document.getElementById("error-list")
+
+form.addEventListener("submit", function(e){
+
+  e.preventDefault()
+
+  let errors = []
+
+  document.querySelectorAll(".error").forEach(el => el.textContent = "")
+  errorList.innerHTML = ""
+
+  const firstName = document.getElementById("first-name")
+  const lastName = document.getElementById("last-name")
+  const email = document.getElementById("email")
+  const availability = document.getElementById("availability")
+
+  const interests = document.querySelectorAll('input[name="interests"]:checked')
+
+  if(!firstName.value.trim()){
+    errors.push({field:firstName,message:"Enter your first name"})
+    document.getElementById("error-first-name").textContent="Enter your first name"
+  }
+
+  if(!lastName.value.trim()){
+    errors.push({field:lastName,message:"Enter your last name"})
+    document.getElementById("error-last-name").textContent="Enter your last name"
+  }
+
+  if(!email.value.trim()){
+    errors.push({field:email,message:"Enter your email address"})
+    document.getElementById("error-email").textContent="Enter your email address"
+  }
+
+  if(!availability.value){
+    errors.push({field:availability,message:"Select your availability date"})
+    document.getElementById("error-availability").textContent="Select your availability date"
+  }
+
+  if(interests.length === 0){
+    errors.push({field:null,message:"Select at least one volunteer interest"})
+    document.getElementById("error-interests").textContent="Select at least one volunteer interest"
+  }
+
+  if(errors.length){
+
+    summary.hidden = false
+
+    errors.forEach(err=>{
+      const li=document.createElement("li")
+      li.textContent=err.message
+      errorList.appendChild(li)
+    })
+
+    summary.focus()
+
+  }else{
+
+    summary.hidden=true
+    alert("Application submitted successfully!")
+
+  }
+
+})
+
+</script>
+
+</body>
+</html>
