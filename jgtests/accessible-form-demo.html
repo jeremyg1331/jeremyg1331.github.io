@@ -13,7 +13,7 @@
 
     :root {
       --primary: #0b5fff;
-      --border: #ccc;
+      --border: #919191;
       --error: #b00020;
       --bg: #f7f7f7;
     }
@@ -77,6 +77,8 @@
     }
 
     textarea {
+      width: 100%;
+      box-sizing: border-box;
       min-height: 100px;
     }
 
@@ -104,7 +106,9 @@
       align-items: center;
       gap: .5rem;
     }
-
+    #shift {
+      width: 100%;
+    }
     .help {
       font-size: .9rem;
       color: #555;
@@ -128,10 +132,14 @@
       outline: 3px solid black;
       outline-offset: 2px;
     }
-
+input::placeholder {
+  font-weight: bold;
+  color: #515151;
+}
     .error {
       color: var(--error);
       font-size: .9rem;
+      font-weight: 600;
     }
 
     .error-summary {
@@ -162,31 +170,6 @@
   <banner>
     <a id="skip-link" href="#main">Skip to main content</a>
   </banner>
-<!-- 
-  To-do
-  -------
-  # Associate errors to fields via aria-describedby
-  # Turn #email-help into a tooltip
-  # Adjust textarea size
-  # Build Confirmation page/modal
-  
-
-  Complete
-  --------
-   # Group Personal Information using a role=group
-   # Add Skip Link so BE passes 2026-03-17 BE shows zero errors
-   # Add Placeholder text to inputs
-   # Add Autocomplete to inputs
-
-
-  Testing procedures
-  --------
-  # Run through with a screen reader
-  # Run Browser extension and bookmarklets
-  # Try to break it
-  # Test Error Handling
-
--->
   <main id="main">
 
     <h1>Volunteer Application</h1>
@@ -205,19 +188,19 @@
         <div class="two-col">
           <div class="field">
             <label for="first-name">First name <span class="required">*</span></label>
-            <input id="first-name" name="first-name" autocomplete="given-name" placeholder="John" required>
+            <input id="first-name" name="first-name" aria-describedby="error-first-name" autocomplete="given-name" placeholder="John" required>
             <div class="error" id="error-first-name"></div>
           </div>
           <div class="field">
             <label for="last-name">Last name <span class="required">*</span></label>
-            <input id="last-name" name="last-name" autocomplete="family-name" placeholder="Doe" required>
+            <input id="last-name" name="last-name" aria-describedby="error-last-name" autocomplete="family-name" placeholder="Doe" required>
             <div class="error" id="error-last-name"></div>
           </div>
         </div>
         <div class="two-col">
           <div class="field">
             <label for="email">Email address <span class="required">*</span></label>
-            <input id="email" name="email" type="email" autocomplete="email" placeholder="john@example.com" required aria-describedby="email-help">
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="john@example.com" required aria-describedby="error-email">
             <!-- <div id="email-help" class="help"><p>We will only use this to contact you about volunteer opportunities.</p></div> -->
             <div class="error" id="error-email"></div>
           </div>
@@ -227,6 +210,24 @@
           </div>
         </div>
       </div>
+
+      <fieldset>
+        <legend>Experience level</legend>
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="experience" value="beginner">
+            Beginner
+          </label>
+          <label>
+            <input type="radio" name="experience" value="intermediate">
+            Intermediate
+          </label>
+          <label>
+            <input type="radio" name="experience" value="experienced">
+            Experienced Volunteer
+          </label>
+        </div>
+      </fieldset>
 
       <fieldset>
         <legend>Volunteer interests <span class="required">*</span></legend>
@@ -258,31 +259,6 @@
         </div>
 
         <div class="error" id="error-interests"></div>
-
-      </fieldset>
-
-      <fieldset>
-        <legend>Experience level</legend>
-
-        <div class="radio-group">
-
-          <label>
-            <input type="radio" name="experience" value="beginner">
-            Beginner
-          </label>
-
-          <label>
-            <input type="radio" name="experience" value="intermediate">
-            Intermediate
-          </label>
-
-          <label>
-            <input type="radio" name="experience" value="experienced">
-            Experienced Volunteer
-          </label>
-
-        </div>
-
       </fieldset>
 
       <div class="field">
